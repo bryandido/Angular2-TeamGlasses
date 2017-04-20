@@ -1,2 +1,7 @@
 <h1>Need a new computer?</h1>
 <p class="lead">Use ERS to find and buy your dream gadget!</p>
+<hr/>
+<h3>Posts</h3>
+<div *ngFor="let key of posts | array">
+<p>{{key.key}}:{{key.value}}</p>
+</div>

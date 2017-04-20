@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { ArrayPipe } from '../../pipes/array.pipe';
 
 @Component({
   moduleId: module.id,
@@ -6,8 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: 'search.component.html',
 })
 export class SearchComponent  {
-  searchStr:string;
-  searchProduct(){
-    console.log(this.searchStr);
+  posts:Post[];
+  constructor(private _userService: UserService){
+    this._userService.getById(1).subscribe(posts => {
+      console.log(posts);
+      this.posts = posts;
+    });
   }
+}
+
+interface Post{
+  user_id: number;
+  email: string;
+  first_name: string;
 }

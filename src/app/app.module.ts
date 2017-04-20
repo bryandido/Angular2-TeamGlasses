@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/cart/checkout/checkout.component';
 import {routing} from './app.routing';
+import {ArrayPipe} from './pipes/array.pipe'
 
 @NgModule({
   imports:      [ BrowserModule, routing, FormsModule, HttpModule ],
@@ -15,7 +16,8 @@ import {routing} from './app.routing';
                   SearchComponent,
                   NavbarComponent,
                   CartComponent,
-                  CheckoutComponent ],
+                  CheckoutComponent,
+                  ArrayPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
