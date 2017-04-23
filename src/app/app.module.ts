@@ -5,8 +5,10 @@ import { AppComponent }  from './app.component';
 import { HttpModule } from '@angular/http';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/cart/checkout/checkout.component';
+import { AboutComponent } from './components/about/about.component';
 import {routing} from './app.routing';
 import {ArrayPipe} from './pipes/array.pipe'
 
@@ -15,8 +17,10 @@ import {ArrayPipe} from './pipes/array.pipe'
   declarations: [ AppComponent,
                   SearchComponent,
                   NavbarComponent,
+                  FooterComponent,
                   CartComponent,
                   CheckoutComponent,
+                  AboutComponent,
                   ArrayPipe ],
   bootstrap:    [ AppComponent ]
 })

@@ -4,6 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {SearchComponent} from './components/search/search.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CheckoutComponent} from './components/cart/checkout/checkout.component';
+import {AboutComponent} from './components/about/about.component';
 
 const appRoutes: Routes = [
   {
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
   {
     path:'cart/checkout',
     component:CheckoutComponent
+  },
+  {
+    path:'about',
+    component:AboutComponent
   }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
