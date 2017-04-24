@@ -1,0 +1,23 @@
+<div *ngIf="posts">
+  <div class="row">
+  <div *ngFor="let post of posts.product">
+
+      <div class="col-md-3">
+        <div class="panel panel-primary">
+          <div class="lead panel-heading">
+            <p>{{post.name}}
+              <button type="button" class="btn btn-primary pull-right" (click)="store(post.id)">
+                Add to Cart</button>
+              </p>
+          </div>
+          <div class="panel-body">
+            <p>Price: ${{post.price}}</p>
+            <p>Details: {{post.detail}}</p>
+            <p>{{storage}}</p>
+            <img src="{{post.URL}}" alt="{{post.name}}" style="width: auto; height: 200px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,16 @@
-import {ModuleWithProviders} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import {SearchComponent} from './components/search/search.component';
-import {CartComponent} from './components/cart/cart.component';
-import {CheckoutComponent} from './components/cart/checkout/checkout.component';
+import { SearchComponent } from './components/search/search.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/cart/checkout/checkout.component';
+import { Product_DetailComponent } from './components/product_detail/product_detail.component';
+import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
+import { ContentComponent } from './components/content/content.component';
 
 const appRoutes: Routes = [
   {
-    path:'',
+    path:'search',
     component:SearchComponent
   },
   {
@@ -17,6 +20,23 @@ const appRoutes: Routes = [
   {
     path:'cart/checkout',
     component:CheckoutComponent
+  },
+  {
+    path:'product_detail',
+    component:Product_DetailComponent
+  },
+  {
+    path: '',
+    redirectTo: 'search',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  },
+  {
+    path: 'content',
+    component: ContentComponent
   }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

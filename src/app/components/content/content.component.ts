@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
+import { UserService } from '../../services/user/user.service';
 import { ArrayPipe } from '../../pipes/array.pipe';
 import { ProductService } from '../../services/product/product.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'cart',
-  templateUrl: 'cart.component.html',
+  selector: 'content',
+  templateUrl: 'content.component.html',
 })
-export class CartComponent  {
+export class ContentComponent  {
   posts:any;
   storage:string;
   constructor(private _productService: ProductService){
-    this._productService.getById(Number(sessionStorage.getItem('Cart'))).subscribe(posts => {
+    this._productService.getAll().subscribe(posts => {
       console.log(posts);
       this.posts = posts;
     });
-}
+  }
+  store(id:string){
+    window.sessionStorage.setItem('Cart',id);
+    this.storage = window.sessionStorage.getItem('Cart');
+  }
 }

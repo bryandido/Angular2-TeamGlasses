@@ -13,7 +13,7 @@ export class UserService{
     return this._http.get('http://10.250.190.152/teamglasses/teamglasses-api/api.php/user?transform=1').map(res => res.json());
   }
   getById(id:number){
-    return this._http.get('http://10.250.190.152/teamglasses/teamglasses-api/api.php/user/' + id + '?transform=1').map(res => res.json());
+    return this._http.get('http://10.50.1.169/teamglasses/teamglasses-api/api.php/user/' + id + '?transform=1').map(res => res.json());
   }
   getByEmail(email:string){
     return this._http.get('http://10.250.190.152/teamglasses/teamglasses-api/api.php/user?filter[]=email,eq,' + email + '&transform=1').map(res => res.json());
