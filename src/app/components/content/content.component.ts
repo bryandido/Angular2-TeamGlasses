@@ -11,14 +11,19 @@ import { ProductService } from '../../services/product/product.service';
 export class ContentComponent  {
   posts:any;
   storage:string;
+  cart: number[]=[];
+
   constructor(private _productService: ProductService){
     this._productService.getAll().subscribe(posts => {
-      console.log(posts);
       this.posts = posts;
     });
+    this.cart=(JSON.parse(window.sessionStorage.getItem('Cart')));
   }
+
   store(id:string){
-    window.sessionStorage.setItem('Cart',id);
+    this.cart.push(Number(id));
+    window.sessionStorage.setItem('Cart',JSON.stringify(this.cart));
     this.storage = window.sessionStorage.getItem('Cart');
+    alert("Added to Cart!");
   }
 }
