@@ -10,6 +10,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/cart/checkout/checkout.component';
 import { Product_DetailComponent } from './components/product_detail/product_detail.component';
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { SearchBarComponent } from './components/searchbar/searchbar.component';
+
 import { routing } from './app.routing';
 
 import { ArrayPipe } from './pipes/array.pipe'
@@ -23,7 +27,10 @@ import { ArrayPipe } from './pipes/array.pipe'
                   CheckoutComponent,
                   Product_DetailComponent,
                   PageNotFoundComponent,
-                  ArrayPipe ],
+                  ArrayPipe,
+                  FooterComponent,
+                  FilterComponent,
+                  SearchBarComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
