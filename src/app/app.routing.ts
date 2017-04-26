@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     component:CartComponent
   },
   {
-    path:'cart/checkout',
+    path:'checkout',
     component:CheckoutComponent
   },
   {

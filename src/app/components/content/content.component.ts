@@ -17,7 +17,10 @@ export class ContentComponent  {
     this._productService.getAll().subscribe(posts => {
       this.posts = posts;
     });
-    this.cart=(JSON.parse(window.sessionStorage.getItem('Cart')));
+    if (window.sessionStorage.getItem('Cart')!=null){
+      this.cart=(JSON.parse(window.sessionStorage.getItem('Cart')));
+    }
+    console.log(this.cart);
   }
 
   store(id:string){
@@ -25,5 +28,5 @@ export class ContentComponent  {
     window.sessionStorage.setItem('Cart',JSON.stringify(this.cart));
     this.storage = window.sessionStorage.getItem('Cart');
     alert("Added to Cart!");
-  }
+  };
 }

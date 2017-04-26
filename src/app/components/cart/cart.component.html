@@ -1,63 +1,62 @@
 <div class="row" style="margin-top: 20px">
-    <div class="col-md-2">
+  <div class="col-md-2">
 
+  </div>
+
+  <div class="col-md-7">
+    <div class="row" style="font-size: 20px; margin-bottom: 30px">
+      <div class="col-md-10">
+        <label>Shopping Cart</label>
+      </div>
+      <div class="col-md-2" style="float: right">
+
+        <button type="button" routerLink="/checkout" class="btn btn-danger">
+                Checkout
+        </button>
+      </div>
     </div>
-
-    <div class="col-md-7">
-        <div class="row" style="font-size: 20px; margin-bottom: 30px">
-            <div class="col-md-10">
-                <label>Shopping Cart</label>
-            </div>
-            <div class="coll-md-2" style="float: right">
-                <a routerlink = '/cart/checkout'>
-                  <button type="button" routerLink="/cart/checkout" class="btn btn-danger">
-                    Checkout
-                  </button>
-                </a>
-            </div>
-        </div>
-        <div *ngIf="posts">
-          <div *ngFor="let post of posts">
+    <div *ngIf="posts">
+      <div *ngFor="let post of posts">
         <div class="row">
           <div *ngIf="post">
             <div class="col-sm-3 text-center">
-                Image of Project
-                <img src="{{post.URL}}" alt="Image" style="width:200px ; height:auto"><br/>
-                <button type="button" class="btn btn-primary" (click)="remove(post.id)">Remove Item</button>
-                <hr/>
-              </div>
+              Image of Project
+              <img src="{{post.URL}}" alt="Image" style="width:200px ; height:auto"><br/>
+              <button type="button" class="btn btn-primary" (click)="remove(post.id)">Remove Item</button>
+              <hr/>
             </div>
-            <div class="col-sm-7">
-                <div class="row">
-                    Product Name <br/>
-                    <h4>{{post.name}}</h4>
-                </div>
-                <div class="row">
-                    Product Detail<br/>
-                    <h4>{{post.detail}}</h4>
-                </div>
+          </div>
+          <div class="col-sm-7">
+            <div class="row">
+              Product Name <br/>
+              <h4>{{post.name}}</h4>
             </div>
-            <div class="col-sm-2">
-                <label>Price of the Product<br/><h4>${{post.price}}</h4></label>
+            <div class="row">
+              Product Detail<br/>
+              <h4>{{post.detail}}</h4>
             </div>
+          </div>
+          <div class="col-sm-2">
+            <label>Price of the Product<br/><h4>${{post.price}}</h4></label>
+          </div>
         </div>
       </div>
     </div>
-        <hr>
+    <hr>
 
-        <div class="row">
-            <div class="col-md-10">
+    <div class="row">
+      <div class="col-md-10">
 
-            </div>
-            <div class="col-md-2">
-                <label>Total Price<br/>
+      </div>
+      <div class="col-md-2">
+        <label>Total Price<br/>
                   <h3>${{total}}</h3>
                 </label>
-            </div>
-        </div>
-
+      </div>
     </div>
-    <div class="col-md-3">
 
-    </div>
+  </div>
+  <div class="col-md-3">
+
+  </div>
 </div>
