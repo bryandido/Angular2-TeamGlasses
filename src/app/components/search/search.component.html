@@ -1,3 +1,35 @@
+<div class ="container">
+  <div class="row">
+    <!--search bar -->
+    <div class="col-sm-offset-2 col-sm-7 col-xs-10">
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="...">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#">Computer</a></li>
+            <li><a href="#">TV</a></li>
+            <li><a href="#">Tablet</a></li>
+            <li><a href="#">Camera</a></li>
+          </ul>
+        </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+    </div>
+    <!--Search button-->
+    <div class="col-sm-1 col-xs-2">
+      <button type="button" class="btn btn-primary">Search</button>
+    </div>
+
+  </div>
+
+  <!--Not sure what this is-->
+  <div>
+    <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-click="flash = {}" ng-bind="flash.message"></div>
+    <div ng-view=""></div>
+  </div>
+</div>
+
+<!--Move to another module-->
 <h1>Need a new computer?</h1>
 <p class="lead">Use ERS to find and buy your dream gadget!</p>
 <hr/>

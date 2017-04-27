@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+h4{
+  margin-bottom: 0px;
+}
+
 .navbar .navbar-toggle .icon-bar {
 background-color: black ;
 }

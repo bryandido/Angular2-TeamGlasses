@@ -23,19 +23,19 @@
             <ul class="nav navbar-nav navbar-right">
               <!--Register-->
               <li class="nav-item" ng-hide="globals.currentUser">
-                <a class="nav-link" href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                <a class="nav-link" href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
               </li>
               <!--Log in-->
               <li class="nav-item" ng-hide="globals.currentUser">
-                <a class="nav-link" ng-href="#/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+                <a class="nav-link" href="login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
               </li>
               <!--User profile-->
               <li class="nav-item" ng-show="globals.currentUser">
-                <a class="nav-link" ng-href="#/profile"><span class="glyphicon glyphicon-user"></span> User</a>
+                <a class="nav-link" href="profile"><span class="glyphicon glyphicon-user"></span> User</a>
               </li>
               <!--Shopping cart-->
               <li class="nav-item" ng-hide="globals.currentUser">
-                <a ng-href="#/shoppingcart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                <a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
               </li>
             </ul>
           </div>
