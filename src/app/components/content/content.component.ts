@@ -17,7 +17,7 @@ export class ContentComponent  {
     this._productService.getAll().subscribe(posts => {
       this.posts = posts;
     });
-    if (window.sessionStorage.getItem('Cart')!=null){
+    if (window.sessionStorage.getItem('Cart')!==null){
       this.cart=(JSON.parse(window.sessionStorage.getItem('Cart')));
     }
     console.log(this.cart);

@@ -17,27 +17,28 @@
     </div>
     <div *ngIf="posts">
       <div *ngFor="let post of posts">
-        <div class="row">
-          <div *ngIf="post">
+        <div *ngIf="post">
+          <hr>
+          <div class="row" style="padding-top: 15px">
             <div class="col-sm-3 text-center">
-              Image of Project
               <img src="{{post.URL}}" alt="Image" style="width:200px ; height:auto"><br/>
-              <button type="button" class="btn btn-primary" (click)="remove(post.id)">Remove Item</button>
-              <hr/>
+              <div style="padding-top: 5px">
+                <button type="button" class="btn btn-primary" (click)="remove(post.id)">Remove Item</button>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-7">
-            <div class="row">
-              Product Name <br/>
-              <h4>{{post.name}}</h4>
+            <div class="col-sm-7">
+              <div class="row">
+                Product Name <br/>
+                <h4>{{post.name}}</h4>
+              </div>
+              <div class="row" style="padding-top: 10px">
+                Product Detail<br/>
+                <h4>{{post.detail}}</h4>
+              </div>
             </div>
-            <div class="row">
-              Product Detail<br/>
-              <h4>{{post.detail}}</h4>
+            <div class="col-sm-2">
+              <label>Price of the Product<br/><h4>${{post.price}}</h4></label>
             </div>
-          </div>
-          <div class="col-sm-2">
-            <label>Price of the Product<br/><h4>${{post.price}}</h4></label>
           </div>
         </div>
       </div>
