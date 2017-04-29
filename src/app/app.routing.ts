@@ -1,10 +1,13 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
+import {RegisterComponent} from './components/register/register.component';
+import {LoginComponent} from './components/login/login.component';
+import {ProfileComponent} from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { Product_DetailComponent } from './components/product_detail/product_detail.component';
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
 
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
@@ -21,12 +24,20 @@ const appRoutes: Routes = [
     component:CartComponent
   },
   {
-    path:'checkout',
-    component:CheckoutComponent
+    path:'register',
+    component:RegisterComponent
   },
   {
-    path:'product_detail/:id',
-    component:Product_DetailComponent
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'profile',
+    component:ProfileComponent
+  },
+  {
+    path:'checkout',
+    component:CheckoutComponent
   },
   {
     path:'searchTv',

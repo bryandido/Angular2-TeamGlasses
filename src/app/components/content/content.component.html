@@ -2,22 +2,53 @@
   <div class="row">
     <div *ngFor="let post of posts.product">
       <div class="col-md-3">
-        <div class="panel panel-primary" style="height: 500px">
+        <div class="panel panel-primary" style="height: 380px">
           <div class="lead panel-heading" style="height: 80px">
-            <p>{{post.name}}
+            <p><a data-toggle="modal" data-target="#detailModal">{{post.name}}</a>
               <button type="button" class="btn btn-primary pull-right" (click)="store(post.id)">
                 Add to Cart
               </button>
-              </p>
+            </p>
           </div>
-          <div class="panel-body" style="padding-top: 0px">
-            <h4><strong>Price: ${{post.price}}</strong></h4>
-            <p style="height: 8em; overflow: auto">Details: {{post.detail}}</p>
-            <p>{{storage}}</p>
-            <img src="{{post.URL}}" alt="{{post.name}}" class="center-block" style="max-width: 270px; max-height: 210px;" >
+
+              <div class="panel-body" style="padding-top: 0px">
+                <p>{{storage}}</p>
+            <div style="height:210px">
+              <img src="{{post.URL}}" alt="{{post.name}}" class="center-block" style="max-width: 270px; max-height: 210px" >
+            </div>
+            <div style="text-align: center">
+              <h4><strong>Price: ${{post.price}}</strong></h4>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<!-- div id="detailModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{post.name}}</h4>
+      </div>
+      <div class="modal-body">
+        <img src="{{post.URL}}" alt="{{post.name}}" class="center-block" style="max-width: 270px; max-height: 210px;" >
+        <div style="text-align: center">
+          <h4><strong>Price: ${{post.price}}</strong></h4>
+          <p>Detail: {{post.detail}}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary pull-left" (click)="store(post.id)">
+          Add to Cart
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div -->
