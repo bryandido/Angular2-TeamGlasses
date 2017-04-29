@@ -18,13 +18,16 @@ export class ProductService{
   getByName(email:string){
     return this._http.get('http://localhost/teamglasses/teamglasses-api/api.php/product?filter[]=email,eq,' + email + '&transform=1').map(res => res.json());
   }
-  create(user:string){
-    return this._http.post('http://localhost/teamglasses/teamglasses-api/api.php/user/', user).map(res => res.json());
+  getByType(type:string){
+    return this._http.get('http://localhost/teamglasses/teamglasses-api/api.php/product?filter[]=type,eq,' + type + '&transform=1').map(res => res.json());
   }
-  update(user:string){
-    //return this._http.put('http://localhost/teamglasses-api/api.php/user/' + user.user_id, user);
+  create(product:string){
+    return this._http.post('http://localhost/teamglasses/teamglasses-api/api.php/product/', product).map(res => res.json());
+  }
+  update(product:string){
+    //return this._http.put('http://localhost/teamglasses-api/api.php/product/' + product.product_id, product);
   }
   delete(id: string){
-    return this._http.delete('http://localhost/teamglasses/teamglasses-api/api.php/user/' + id).map(res => res.json());
+    return this._http.delete('http://localhost/teamglasses/teamglasses-api/api.php/product/' + id).map(res => res.json());
   }
 }

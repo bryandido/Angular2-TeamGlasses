@@ -6,7 +6,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Product_DetailComponent } from './components/product_detail/product_detail.component';
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
-import { ContentComponent } from './components/content/content.component';
+
+import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
+import { SearchTabletComponent } from './components/searchTablet/searchTablet.component';
+import { SearchTvComponent } from './components/searchTv/searchTv.component';
 
 const appRoutes: Routes = [
   {
@@ -22,8 +25,21 @@ const appRoutes: Routes = [
     component:CheckoutComponent
   },
   {
-    path:'product_detail',
+    path:'product_detail/:id',
     component:Product_DetailComponent
+  },
+  {
+    path:'searchTv',
+    component: SearchTvComponent
+  },
+
+  {
+    path:'searchLaptop',
+    component: SearchLaptopComponent
+  },
+  {
+    path:'searchTablet',
+    component: SearchTabletComponent
   },
   {
     path: '',
@@ -33,10 +49,6 @@ const appRoutes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
-  },
-  {
-    path: 'content',
-    component: ContentComponent
   }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

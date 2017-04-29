@@ -16,6 +16,13 @@ import { FilterComponent } from './components/filter/filter.component';
 import { SearchBarComponent } from './components/searchbar/searchbar.component';
 import { routing } from './app.routing';
 
+import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
+import { ContentLaptopComponent } from './components/contentLaptop/contentLaptop.component';
+import { SearchTabletComponent } from './components/searchTablet/searchTablet.component';
+import { ContentTableComponent } from './components/contentTablet/contentTablet.component';
+import { SearchTvComponent } from './components/searchTv/searchTv.component';
+import { ContentTvComponent } from './components/contentTv/contentTv.component';
+
 import { ArrayPipe } from './pipes/array.pipe'
 
 @NgModule({
@@ -31,6 +38,12 @@ import { ArrayPipe } from './pipes/array.pipe'
                   FilterComponent,
                   FooterComponent,
                   SearchBarComponent,
+                  SearchTvComponent,
+                  SearchLaptopComponent,
+                  SearchTabletComponent,
+                  ContentTvComponent,
+                  ContentTableComponent,
+                  ContentLaptopComponent,
                   ArrayPipe ],
   bootstrap:    [ AppComponent ]
 })
