@@ -8,6 +8,7 @@ import {ProfileComponent} from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
 
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
@@ -38,6 +39,10 @@ const appRoutes: Routes = [
   {
     path:'checkout',
     component:CheckoutComponent
+  },
+  {
+    path:'confirmation',
+    component:ConfirmationComponent
   },
   {
     path:'searchTv',

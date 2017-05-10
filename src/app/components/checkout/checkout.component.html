@@ -1,44 +1,42 @@
 <div class="container">
   <h2>Enter shipping address</h2>
-    <form>
+    <form (ngSubmit)="submitForm()">
       <div class="form-group">
         <label>Full name:</label>
-        <input type="text" class="form-control" id="fullname">
+        <input type="text" [(ngModel)]="fullname" name="fullname" placeholder="Enter Full Name" class="form-control" id="fullname"/>
       </div>
       <div class="form-group">
         <label>Address line 1:</label>
-        <input type="text" class="form-control" id="addressline1">
+        <input type="text" [(ngModel)]="addressline1" name="addressline1" placeholder="Enter Address Line 1" class="form-control" id="addressline1">
       </div>
       <div class="form-group">
         <label>Address line 2:</label>
-        <input type="text" class="form-control" id="addressline2">
+        <input type="text" [(ngModel)]="addressline2" name="addressline2" placeholder="Enter Address Line 2" class="form-control" id="addressline2">
       </div>
       <div class="form-group">
         <label>City:</label>
-        <input type="text" class="form-control" id="city">
+        <input type="text" [(ngModel)]="city" name="city" placeholder="Enter City" class="form-control" id="city">
       </div>
       <div class="form-group">
         <label>State/Province/Region:</label>
-        <input type="text" class="form-control" id="state">
+        <input type="text" [(ngModel)]="state" name="state" placeholder="Enter State/Province/Region" class="form-control" id="state">
       </div>
       <div class="form-group">
         <label>ZIP:</label>
-        <input type="text" class="form-control" id="zip">
+        <input type="text" [(ngModel)]="zip" name="zip" placeholder="Enter Zip Code" class="form-control" id="zip">
       </div>
       <div class="form-group">
         <label>Country</label>
-        <input type="text" class="form-control" id="country">
+        <input type="text" [(ngModel)]="country" name="country" placeholder="Enter Country" class="form-control" id="country">
       </div>
       <div class="form-group">
         <label>Phone number:</label>
-        <input type="text" class="form-control" id="phone">
+        <input type="text" [(ngModel)]="phonenumber" name="phonenumber" placeholder="Enter Phone Nmber" class="form-control" id="phone">
       </div>
       <div>
         <label><input type="checkbox"> Remember me</label>
       </div>
-    </form>
     <h2>Enter payment information</h2>
-    <form>
       <div class="form-group">
         <label>Card number:</label>
         <input type="text" class="form-control" id="cardnumber">
@@ -51,8 +49,8 @@
         <label>Expiration date:</label>
         <input type="text" class="form-control" id="expirationdate">
       </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div>
-  <button type="submit" class="btn btn-primary" (click)="calculate()">Submit</button>
 </div>
 </div>

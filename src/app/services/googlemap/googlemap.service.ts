@@ -10,6 +10,7 @@ export class GooglemapService{
   }
 // Change URL depending on where you're hosting it.
   getShippingTime(addrline1:string,city:string,state:string){
-    return this._http.get('https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=37.335204,-121.881072&destinations=1274+S+Mayfair+Ave+Daly+City+CA&key=AIzaSyB63QilAqU4cLcz2BAHqq38_gnKxZwVPFY').map(res => res.json());
+    console.log(addrline1, city, state);
+    return this._http.get('https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=37.335204,-121.881072&destinations='+addrline1+city+state+'&key=AIzaSyB63QilAqU4cLcz2BAHqq38_gnKxZwVPFY').map(res => res.json());
   }
 }
