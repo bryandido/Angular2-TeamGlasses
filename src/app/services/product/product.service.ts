@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {Headers} from '@angular/http';
 @Injectable()
 export class ProductService{
 
@@ -21,8 +21,11 @@ export class ProductService{
   getByType(type:string){
     return this._http.get('http://10.250.190.152/teamglasses/teamglasses-api/api.php/product?filter[]=type,eq,' + type + '&transform=1').map(res => res.json());
   }
-  create(product:string){
-    return this._http.post('http://10.250.190.152/teamglasses/teamglasses-api/api.php/product/', product).map(res => res.json());
+  create(product:any){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    console.log(product);
+    return this._http.post('http://10.250.190.152/teamglasses/teamglasses-api/api.php/product/', product, {headers:headers}).map(res => res.json());
   }
   update(product:string){
     //return this._http.put('http://10.50.1.169/teamglasses-api/api.php/product/' + product.product_id, product);

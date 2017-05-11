@@ -18,9 +18,12 @@ export class CartComponent {
       this._productService.getById(this.cart[i]).subscribe(posts => {
         this.posts.push(posts);
         this.total += posts.price;
+        window.localStorage.setItem('total',String[this.total]);
       });
 
     }
+
+  //  this._productService.create(this.product).subscribe();
   }
   remove(id: number) {
     for (var i = 0; i < this.cart.length; i++) {

@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-md-4">
       <div class="panel panel-default">
-        <div class="panel-body">Shipment Information {{fullname}}</div>
+        <div class="panel-body">Shipment Information
+        <p>{{fullname}}</p>
+        <p>{{addressline1}} {{city}} {{state}} {{zip}} {{country}}</p>
+        <p>{{phonenumber}}</p>
+        </div>
       </div>
     </div>
     <div class="col-md-4">
@@ -16,9 +20,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="embed-responsive embed-responsive-4by3">
-            <iframe class="embed-responsive-item" src="//www.google.com/maps/embed/v1/directions?origin=360+S+11th+Street+San+Jose+CA+USA
-          &destination=1274+S+Mayfair+Ave+Daly+City+CA+USA
-          &key=AIzaSyC8Y0-TP7HlFgSAyjPTIrgKqzL1_7Ro0qE">
+            <iframe class="embed-responsive-item" [src]="sanitizer.bypassSecurityTrustResourceUrl(link)">
       </iframe></div>
         </div>
 
