@@ -9,9 +9,12 @@ import { ProductService } from '../../services/product/product.service';
   templateUrl: 'content.component.html',
 })
 export class ContentComponent  {
-  posts:any;
+  post: any;
+  posts: any;
+
   storage:string;
   cart: number[]=[];
+
 
   constructor(private _productService: ProductService){
     this._productService.getAll().subscribe(posts => {
@@ -29,4 +32,9 @@ export class ContentComponent  {
     this.storage = window.sessionStorage.getItem('Cart');
     alert("Added to Cart!");
   };
+
+  selectPost(post: any): void {
+    this.post =  post;
+  }
+
 }

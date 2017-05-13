@@ -9,6 +9,7 @@ import { ProductService } from '../../services/product/product.service';
   templateUrl: 'contentTv.component.html',
 })
 export class ContentTvComponent  {
+  post: any;
   posts:any;
   storage:string;
   cart: number[]=[];
@@ -29,4 +30,8 @@ export class ContentTvComponent  {
     this.storage = window.sessionStorage.getItem('Cart');
     alert("Added to Cart!");
   };
+
+  selectPost(post: any): void {
+    this.post =  post;
+  }
 }

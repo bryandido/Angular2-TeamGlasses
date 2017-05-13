@@ -9,6 +9,7 @@ import { ProductService } from '../../services/product/product.service';
   templateUrl: 'contentTablet.component.html',
 })
 export class ContentTableComponent  {
+  post: any;
   posts:any;
   storage:string;
   cart: number[]=[];
@@ -29,4 +30,8 @@ export class ContentTableComponent  {
     this.storage = window.sessionStorage.getItem('Cart');
     alert("Added to Cart!");
   };
+
+  selectPost(post: any): void {
+    this.post =  post;
+  }
 }

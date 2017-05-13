@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { HttpModule } from '@angular/http';
+import { CommonModule } from "@angular/common"
 
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,6 +17,7 @@ import { PageNotFoundComponent } from './components/page_not_found/page_not_foun
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchBarComponent } from './components/searchbar/searchbar.component';
+import { DetailModalComponent } from './components/detail_modal/detail_modal.component';
 import { routing } from './app.routing';
 
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
@@ -28,7 +30,7 @@ import { ContentTvComponent } from './components/contentTv/contentTv.component';
 import { ArrayPipe } from './pipes/array.pipe'
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, HttpModule ],
+  imports:      [ BrowserModule, routing, FormsModule, HttpModule, CommonModule],
   declarations: [ AppComponent,
                   SearchComponent,
                   NavbarComponent,
@@ -48,6 +50,7 @@ import { ArrayPipe } from './pipes/array.pipe'
                   ContentTvComponent,
                   ContentTableComponent,
                   ContentLaptopComponent,
+                  DetailModalComponent,
                   ArrayPipe ],
   bootstrap:    [ AppComponent ]
 })
