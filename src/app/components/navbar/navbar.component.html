@@ -1,37 +1,43 @@
-<nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" routerLink="/">ERS</a>
+
+      <!--Navigation -->
+      <nav class="navbar navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!--Menu button for mobile devices-->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="./images/logo-gray.png" alt="Logo" class="img-responsive" alt="Responsive image" style="width: 45px; height: 45px; float:center"/></a>
+          </div>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+              <li><a [routerLink]="['/search']">All Products</a></li>
+              <li><a [routerLink]="['/searchLaptop']">Laptops</a></li>
+              <li><a [routerLink]="['/searchTv']">TVs </a></li>
+              <li><a [routerLink]="['/searchTablet']">Tablets</a></li>
+            </ul>
+
+            <!--Right menu-->
+            <ul class="nav navbar-nav navbar-right">
+              <!--Register-->
+              <li class="nav-item" ng-hide="globals.currentUser">
+                <a class="nav-link" href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+              </li>
+              <!--Log in-->
+              <li class="nav-item" ng-hide="globals.currentUser">
+                <a class="nav-link" href="login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+              </li>
+              <!--User profile-->
+              <li class="nav-item" ng-show="globals.currentUser">
+                <a class="nav-link" href="profile"><span class="glyphicon glyphicon-user"></span> User</a>
+              </li>
+              <!--Shopping cart-->
+              <li class="nav-item" ng-hide="globals.currentUser" style="font-size: 30px">
+                <a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="navbar" class="collapse navbar-collapse">
-
-          <form class="navbar-form navbar-left" role="search">
-            <div class="input-group">
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="Search Product..." [(ngModel)]="searchStr" name="searchStr" (keyup)="searchProduct()">
-              </div>
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-primary">
-                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </button>
-              </span>
-            </div>
-          </form>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-          </ul>
-
-        </div><!--/.nav-collapse -->
-      </div><!--/.container -->
-
-    </nav>
+      </nav>

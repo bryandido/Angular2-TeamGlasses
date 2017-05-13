@@ -5,19 +5,17 @@ import { ProductService } from '../../services/product/product.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'search',
-  templateUrl: 'search.component.html',
+  selector: 'searchTablet',
+  templateUrl: 'searchTablet.component.html',
 })
-export class SearchComponent  {
+export class SearchTabletComponent  {
   post: any;
-  posts: any;
-
+  posts:any;
   storage:string;
   cart: number[]=[];
 
-
   constructor(private _productService: ProductService){
-    this._productService.getAll().subscribe(posts => {
+    this._productService.getByType("Tablet").subscribe(posts => {
       this.posts = posts;
     });
     if (window.sessionStorage.getItem('Cart')!==null){
