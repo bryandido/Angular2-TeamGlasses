@@ -15,9 +15,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ConfirmationComponent }from './components/confirmation/confirmation.component';
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
-import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { DetailModalComponent } from './components/detail_modal/detail_modal.component';
 import { routing } from './app.routing';
 
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
@@ -38,12 +36,10 @@ import { ArrayPipe } from './pipes/array.pipe'
                   CheckoutComponent,
                   ConfirmationComponent,
                   PageNotFoundComponent,
-                  ContentComponent,
                   FooterComponent,
                   SearchTvComponent,
                   SearchLaptopComponent,
                   SearchTabletComponent,
-                  DetailModalComponent,
                   ArrayPipe ],
   bootstrap:    [ AppComponent ]
 })
