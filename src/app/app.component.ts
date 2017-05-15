@@ -3,6 +3,7 @@ import { UserService } from './services/user/user.service';
 import { ProductService } from './services/product/product.service';
 import { GooglemapService } from './services/googlemap/googlemap.service';
 import { CustomerService } from './services/customer/customer.service';
+import { TransactionService } from './services/transaction/transaction.service';
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,8 @@ import { CustomerService } from './services/customer/customer.service';
   providers: [UserService,
               ProductService,
               CustomerService,
-              GooglemapService],
+              GooglemapService,
+              TransactionService],
   templateUrl: 'app.component.html',
 })
 export class AppComponent  {}

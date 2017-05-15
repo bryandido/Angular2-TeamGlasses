@@ -2,23 +2,23 @@
 
   <div class="row col-sm-offset-2 col-sm-8">
     <h3>Log In</h3>
-    <form name="form" ng-submit="login.login()" role="form">
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
       <!--Email-->
-      <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
-        <label for="email"><h4>Email</h4></label>
-        <input type="email" name="email" id="email" class="form-control" ng-model="login.email" required />
-        <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+      <div class="form-group">
+        <label><h4>Email</h4></label>
+        <input type="email" class="form-control" formControlName="email"/>
+        <span class="help-block">Email is required</span>
       </div>
       <!--Password-->
-      <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-        <label for="password"><h4>Password</h4></label>
-        <input type="password" name="password" id="password" class="form-control" ng-model="login.password" required />
-        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+      <div class="form-group" >
+        <label><h4>Password</h4></label>
+        <input type="password" class="form-control" formControlName="password"/>
+        <span class="help-block">Password is required</span>
       </div>
       <!--Submit-->
       <div class="form-actions">
-        <button type="submit" ng-disabled="form.$invalid || login.dataLoading" class="btn btn-primary">Log In</button>
-        <a href="register" class="btn btn-link">Sign Up</a>
+        <button type="submit" class="btn btn-primary">Log In</button>
+        <button type="button" routerLink="/register" class="btn btn-link">Sign Up</button>
       </div>
     </form>
   </div>

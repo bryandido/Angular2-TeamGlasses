@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { HttpModule } from '@angular/http';
 
@@ -28,7 +28,7 @@ import { ContentTvComponent } from './components/contentTv/contentTv.component';
 import { ArrayPipe } from './pipes/array.pipe'
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, HttpModule ],
+  imports:      [ BrowserModule, routing, FormsModule, ReactiveFormsModule, HttpModule ],
   declarations: [ AppComponent,
                   SearchComponent,
                   NavbarComponent,

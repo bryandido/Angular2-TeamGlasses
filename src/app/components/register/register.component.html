@@ -1,33 +1,28 @@
-
 <div class ="container ">
 
   <div class="row col-sm-offset-2 col-sm-8">
     <h3>Register</h3>
-    <br>  
-    <form name="form" ng-submit="register.register()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.first_name.$dirty && form.first_name.$error.required }">
-            <label for="first_name"><h4>First Name</h4></label>
-            <input type="text" name="first_name" id="first_name" class="form-control" ng-model="register.user.first_name" required />
-            <span ng-show="form.first_name.$dirty && form.first_name.$error.required" class="help-block">First Name is required</span>
+    <br>
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label><h4>First Name</h4></label>
+            <input type="text" class="form-control" placeholder="Enter First Name" formControlName="first_name"/>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.last_name.$dirty && form.last_name.$error.required }">
-            <label for="last_name"><h4>Last Name</h4></label>
-            <input type="text" name="last_name" id="last_name" class="form-control" ng-model="register.user.last_name" required />
-            <span ng-show="form.last_name.$dirty && form.last_name.$error.required" class="help-block">Last Name is required</span>
+        <div class="form-group">
+            <label><h4>Last Name</h4></label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="last_name"/>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
-            <label for="email"><h4>Email</h4></label>
-            <input type="email" name="email" id="email" class="form-control" ng-model="register.user.email" required />
-            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+        <div class="form-group">
+            <label><h4>Email</h4></label>
+            <input type="email" class="form-control" placeholder="Enter Email" formControlName="email"/>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password"><h4>Password</h4></label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="register.user.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        <div class="form-group">
+            <label><h4>Password</h4></label>
+            <input type="password" class="form-control" placeholder="Enter Password" formControlName="password"/>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || register.dataLoading" class="btn btn-primary">Register</button>
-            <a href="index" class="btn btn-link">Cancel</a>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a href="/" class="btn btn-link">Cancel</a>
         </div>
     </form>
   </div>
