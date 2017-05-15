@@ -38,12 +38,19 @@ city:string;
 zip:number;
 country:string;
 phonenumber:number;
+cardnumber:string;
+nameoncard:string;
+expirationdate:string;
+cvv:string;
 constructor(private router:Router, private _transactionService:TransactionService){
   console.log(window.sessionStorage.getItem('userID'))
 }
 
   submitForm(){
-
+    window.sessionStorage.setItem('cardnumber',this.cardnumber);
+    window.sessionStorage.setItem('nameoncard',this.nameoncard);
+    window.sessionStorage.setItem('expirationdate',this.expirationdate);
+    window.sessionStorage.setItem('cvv',this.cvv);
     this.transaction.user_id = window.sessionStorage.getItem('userID');
     this.transaction.shipping_name=this.fullname;
     this.transaction.shipping_address_line_1=this.addressline1;
@@ -57,6 +64,15 @@ constructor(private router:Router, private _transactionService:TransactionServic
       error => alert(error),
       () => console.log("Finished")
     );
+
+    this._transactionService.getByUserId(6).subscribe(transaction =>{
+      this.posts = transaction.transaction;
+      window.sessionStorage.setItem('latestTransaction',this.posts[(this.posts.length) - 1].id); //This code is correct.
+    });
+
+  /*  this._transactionService.getByUserId(Number[window.sessionStorage.get]).subscribe(data => {
+
+  })*/
 /*
     console.log(this.fullname,this.state,this.phonenumber);
     window.localStorage.setItem('fullname',this.fullname);

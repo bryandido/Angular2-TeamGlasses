@@ -1,22 +1,41 @@
+<div id="print-section">
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
       <div class="panel panel-default">
-        <div class="panel-body">Shipment Information
+        <div class="panel-body">
+        <h4>Shipment Information</h4>
+        <br/>
         <p>{{fullname}}</p>
         <p>{{addressline1}} {{city}} {{state}} {{zip}} {{country}}</p>
         <p>{{phonenumber}}</p>
+        <h4>Payment Information</h4>
+        <br/>
+        <p>{{nameoncard}}</p>
+        <p>{{cardnumber}}</p>
+        <p>{{expirationdate}}</p>
+        <p>{{cvv}}</p>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="panel panel-default">
-        <div class="panel-body">Estimated delivery time
+        <div class="panel-body">
+          <h4>Estimated delivery time</h4>
+          <br/>
           <p>{{duration}}</p>
+          <p>Items Ordered:</p>
+            <div *ngIf="posts">
+              <div *ngFor="let post of posts; let i = index">
+                <div *ngIf="post">
+                  <p>{{i+1}}. {{post.name}} {{post.details}} ${{post.price}}</p>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" id="hide">
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="embed-responsive embed-responsive-4by3">
@@ -27,5 +46,6 @@
       </div>
     </div>
   </div>
-
+<button type="button" class="btn btn-primary" (click)="print()">Print Confirmation</button>
+</div>
 </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ArrayPipe } from '../../pipes/array.pipe';
 import { ProductService } from '../../services/product/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,7 @@ export class CartComponent {
   cart: number[];
   storage: string;
   total: number = 0;
-  constructor(private _productService: ProductService) {
+  constructor(private _productService: ProductService, private _router: Router) {
     this.cart = JSON.parse(sessionStorage.getItem('Cart'));
     for (var i = 0; i < this.cart.length; i++) {
       this._productService.getById(this.cart[i]).subscribe(posts => {
@@ -34,5 +35,14 @@ export class CartComponent {
     }
     sessionStorage.setItem('Cart', JSON.stringify(this.cart));
     window.location.reload();
-  };
+  }
+  check(){
+    if (window.sessionStorage.getItem('userID')==null){
+      alert('Please register or login.');
+      this._router.navigateByUrl('/login');
+    }
+    else{
+      this._router.navigateByUrl('/checkout');
+    }
+  }
 }
