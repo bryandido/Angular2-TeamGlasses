@@ -27,12 +27,13 @@ export class UserService{
     var headers = new Headers();
     headers.append('Content-Type','application/json');
     console.log(json);
-    return this._http.post('http://192.168.56.1/teamglasses/teamglasses-api/api.php/user/', user).map(res => res.json());
-  }
+
+    return this._http.post('http://192.168.56.1/teamglasses/teamglasses-api/api.php/user/', user).map(res => res.json());  }
   update(user:string){
     //return this._http.put('http://localhost/teamglasses-api/api.php/user/' + user.user_id, user);
   }
   delete(id: string){
+
     return this._http.delete('http://192.168.56.1/teamglasses/teamglasses-api/api.php/user/' + id).map(res => res.json());
   }
 }

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { HttpModule } from '@angular/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,22 +14,17 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ConfirmationComponent }from './components/confirmation/confirmation.component';
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
-import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SearchBarComponent } from './components/searchbar/searchbar.component';
 import { routing } from './app.routing';
 
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
-import { ContentLaptopComponent } from './components/contentLaptop/contentLaptop.component';
 import { SearchTabletComponent } from './components/searchTablet/searchTablet.component';
-import { ContentTableComponent } from './components/contentTablet/contentTablet.component';
 import { SearchTvComponent } from './components/searchTv/searchTv.component';
-import { ContentTvComponent } from './components/contentTv/contentTv.component';
 
 import { ArrayPipe } from './pipes/array.pipe'
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, ReactiveFormsModule, HttpModule ],
+  imports:      [ BrowserModule, routing, FormsModule, ReactiveFormsModule, HttpModule, Ng2SearchPipeModule],
   declarations: [ AppComponent,
                   SearchComponent,
                   NavbarComponent,
@@ -39,15 +35,10 @@ import { ArrayPipe } from './pipes/array.pipe'
                   CheckoutComponent,
                   ConfirmationComponent,
                   PageNotFoundComponent,
-                  ContentComponent,
                   FooterComponent,
-                  SearchBarComponent,
                   SearchTvComponent,
                   SearchLaptopComponent,
                   SearchTabletComponent,
-                  ContentTvComponent,
-                  ContentTableComponent,
-                  ContentLaptopComponent,
                   ArrayPipe ],
   bootstrap:    [ AppComponent ]
 })
