@@ -1,43 +1,72 @@
+<!--Navigation -->
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--Menu button for mobile devices-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="./images/logo-gray.png" alt="Logo" class="img-responsive" alt="Responsive image" style="width: 45px; height: 45px; float:center"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/search']">All Products</a></li>
+        <li><a [routerLink]="['/searchLaptop']">Laptops</a></li>
+        <li><a [routerLink]="['/searchTv']">TVs </a></li>
+        <li><a [routerLink]="['/searchTablet']">Tablets</a></li>
+      </ul>
 
-      <!--Navigation -->
-      <nav class="navbar navbar">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <!--Menu button for mobile devices-->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="./images/logo-gray.png" alt="Logo" class="img-responsive" alt="Responsive image" style="width: 45px; height: 45px; float:center"/></a>
-          </div>
-          <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav">
-              <li><a [routerLink]="['/search']">All Products</a></li>
-              <li><a [routerLink]="['/searchLaptop']">Laptops</a></li>
-              <li><a [routerLink]="['/searchTv']">TVs </a></li>
-              <li><a [routerLink]="['/searchTablet']">Tablets</a></li>
-            </ul>
+      <!--Right menu-->
+      <ul class="nav navbar-nav navbar-right">
+        <!--Register-->
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" href="register" id="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        </li>
+        <!--Log in-->
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" href="login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+        </li>
+        <!--Log off-->
+        <li class="nav-item" *ngIf="loggedIn">
+          <a class="nav-link" (click)="logoff()"><span class="glyphicon glyphicon-log-out"></span> Log Off</a>
+        </li>
+        <!--User profile-->
+        <li class="nav-item" *ngIf="loggedIn">
+          <a class="nav-link" href="profile"><span class="glyphicon glyphicon-user"></span> User</a>
+        </li>
+        <!--Shopping cart-->
+        <li class="nav-item"  style="font-size: 30px">
+          <a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+        </li>
 
-            <!--Right menu-->
-            <ul class="nav navbar-nav navbar-right">
-              <!--Register-->
-              <li class="nav-item" ng-hide="globals.currentUser">
-                <a class="nav-link" href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-              </li>
-              <!--Log in-->
-              <li class="nav-item" ng-hide="globals.currentUser">
-                <a class="nav-link" href="login"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
-              </li>
-              <!--User profile-->
-              <li class="nav-item" ng-show="globals.currentUser">
-                <a class="nav-link" href="profile"><span class="glyphicon glyphicon-user"></span> User</a>
-              </li>
-              <!--Shopping cart-->
-              <li class="nav-item" ng-hide="globals.currentUser" style="font-size: 30px">
-                <a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+function edit(id)
+{
+
+/*editfields = document.getElementById('editfields');
+editfields.appendChild(container);
+editfields.style.display="block";
+
+viewfields = document.getElementById('viewfields');
+viewfields.appendChild(container);
+viewfields.style.display="none";*/
+
+var tmpid = $(document.activeElement).attr('id');
+document.getElementById("editfields" + id).style.display="block";
+document.getElementById("viewfields" + id).style.display="none";
+}
+
+function cancel(id)
+{
+var tmpid = $(document.activeElement).attr('id');
+document.getElementById("editfields" + id).style.display="none";
+document.getElementById("viewfields" + id).style.display="block";
+}
+</script>
