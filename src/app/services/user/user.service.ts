@@ -32,7 +32,7 @@ export class UserService{
   update(user:string){
     //return this._http.put('http://localhost/teamglasses-api/api.php/user/' + user.user_id, user);
   }
-  delete(id: string){
+  delete(id: number){
     return this._http.delete('http://localhost/teamglasses/teamglasses-api/api.php/user/' + id).map(res => res.json());
   }
 }

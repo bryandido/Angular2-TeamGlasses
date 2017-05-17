@@ -13,6 +13,10 @@
   padding: 0px 15px;
 }
 
+.nav a{
+  font-size: 14px;
+}
+
 a {
   color: #6f6f6f;
   text-decoration: none;
@@ -20,6 +24,7 @@ a {
 
 h4{
   margin-bottom: 0px;
+  font-size: 16px;
 }
 
 .navbar .navbar-toggle .icon-bar {
@@ -38,6 +43,33 @@ background-color: black ;
   margin-left: auto;
   margin-right: auto;
 }
+
+#cart-button{
+  background-color: #6f6f6f;
+  border-color: #f2f2f2;
+}
+
+#cancel-button{
+  background-color: #f2f2f2;
+  border-color: #fff;
+}
+
+.panel{
+  border-color: #f2f2f2;
+  margin-bottom: 50px;
+}
+
+.lead{
+  background-color: #f2f2f2;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.form-group{
+  margin-bottom: 5px;
+}
+
+
 
 footer{
   min-width:100%;

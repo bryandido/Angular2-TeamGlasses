@@ -16,6 +16,11 @@ import { ConfirmationComponent }from './components/confirmation/confirmation.com
 import { PageNotFoundComponent } from './components/page_not_found/page_not_found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { routing } from './app.routing';
+import {AboutComponent} from './components/about/about.component';
+import {FAQComponent} from './components/faq/faq.component';
+import {ReturnComponent} from './components/return/return.component';
+import {ShippingComponent} from './components/shipping/shipping.component';
+import {SupportComponent} from './components/support/support.component';
 
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
 import { SearchTabletComponent } from './components/searchTablet/searchTablet.component';
@@ -39,7 +44,12 @@ import { ArrayPipe } from './pipes/array.pipe'
                   SearchTvComponent,
                   SearchLaptopComponent,
                   SearchTabletComponent,
-                  ArrayPipe ],
+                  ArrayPipe,
+                  AboutComponent,
+                  FAQComponent,
+                  ReturnComponent,
+                  ShippingComponent,
+                  SupportComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

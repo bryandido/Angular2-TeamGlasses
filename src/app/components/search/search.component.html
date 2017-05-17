@@ -10,22 +10,24 @@
       <div class="row">
         <div *ngFor="let post of posts.product | filter:term">
           <div class="col-md-3">
-            <div class="panel panel-primary" style="height: 380px">
-              <div class="lead panel-heading" style="height: 80px">
+            <div class="panel panel-primary" style="height: 365px;">
+              <div class="lead" style="height: 80px">
                 <p><a style= "color:black;" (click) = selectPost(post) data-toggle="modal" data-target="#detailModal">{{post.name}}</a>
-                  <button type="button" class="btn btn-warning btn-xs pull-right" (click)="store(post.id)">
-                    Add to Cart
-                  </button>
                 </p>
               </div>
               <div class="panel-body">
-                <div style="height:210px">
+                <div style="height:190px">
                   <a (click) = selectPost(post) data-toggle="modal" data-target="#detailModal">
                     <img src="{{post.URL}}" alt="{{post.name}}" class="center-block" style="max-width: 100%; max-height: 100%" >
                   </a>
                 </div>
                 <div style="text-align: center">
                   <h4><strong>Price: ${{post.price}}</strong></h4>
+                  <p style="margin-top:5px;">
+                  <button type="button" id="cart-button" class="btn btn-warning btn-xs" (click)="store(post.id)">
+                    Add to Cart
+                  </button>
+                  </p>
                 </div>
               </div>
             </div>
@@ -35,6 +37,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Modal -->
 
@@ -54,10 +57,10 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-warning pull-left" (click)="store(post.id)">
+          <button style="background-color: #2f2f2f; border-color: #f2f2f2;" type="button" class="btn btn-warning pull-left" (click)="store(post.id)">
             Add to Cart
           </button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

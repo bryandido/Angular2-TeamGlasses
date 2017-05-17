@@ -12,8 +12,8 @@
     </div>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/search']">All Products</a></li>
-        <li><a [routerLink]="['/searchLaptop']">Laptops</a></li>
+        <li><a [routerLink]="['/search']" (click) = routeTo(all)>All Products</a></li>
+        <li><a [routerLink]="['/searchLaptop']" (click) = routeTo(laptop)>Laptops</a></li>
         <li><a [routerLink]="['/searchTv']">TVs </a></li>
         <li><a [routerLink]="['/searchTablet']">Tablets</a></li>
       </ul>
@@ -37,7 +37,7 @@
           <a class="nav-link" href="profile"><span class="glyphicon glyphicon-user"></span> User</a>
         </li>
         <!--Shopping cart-->
-        <li class="nav-item"  style="font-size: 30px">
+        <li class="nav-item"  style="font-size: 40px">
           <a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
         </li>
 
@@ -45,28 +45,3 @@
     </div>
   </div>
 </nav>
-
-<script>
-function edit(id)
-{
-
-/*editfields = document.getElementById('editfields');
-editfields.appendChild(container);
-editfields.style.display="block";
-
-viewfields = document.getElementById('viewfields');
-viewfields.appendChild(container);
-viewfields.style.display="none";*/
-
-var tmpid = $(document.activeElement).attr('id');
-document.getElementById("editfields" + id).style.display="block";
-document.getElementById("viewfields" + id).style.display="none";
-}
-
-function cancel(id)
-{
-var tmpid = $(document.activeElement).attr('id');
-document.getElementById("editfields" + id).style.display="none";
-document.getElementById("viewfields" + id).style.display="block";
-}
-</script>

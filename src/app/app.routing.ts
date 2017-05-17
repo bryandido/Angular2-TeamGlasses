@@ -13,6 +13,12 @@ import { PageNotFoundComponent } from './components/page_not_found/page_not_foun
 import { SearchLaptopComponent } from './components/searchLaptop/searchLaptop.component';
 import { SearchTabletComponent } from './components/searchTablet/searchTablet.component';
 import { SearchTvComponent } from './components/searchTv/searchTv.component';
+import { AboutComponent } from './components/about/about.component';
+import { FAQComponent } from './components/faq/faq.component';
+import { ReturnComponent } from './components/return/return.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { SupportComponent } from './components/support/support.component';
+
 
 const appRoutes: Routes = [
   {
@@ -64,6 +70,26 @@ const appRoutes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
+  },
+  {
+    path:'about',
+    component:AboutComponent
+  },
+  {
+    path:'faq',
+    component:FAQComponent
+  },
+  {
+    path:'return',
+    component:ReturnComponent
+  },
+  {
+    path:'shipping',
+    component:ShippingComponent
+  },
+  {
+    path:'support',
+    component:SupportComponent
   }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
