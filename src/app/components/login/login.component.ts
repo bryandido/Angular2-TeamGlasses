@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       data => {this.emailHits = data;
         if (this.emailHits.user[0].password===this.login.password){
           window.sessionStorage.setItem('userID',this.emailHits.user[0].user_id);
-          this._router.navigateByUrl('/');
+          window.location.href="/";
         }
         else{
           alert("Invalid Login. Please try again.")

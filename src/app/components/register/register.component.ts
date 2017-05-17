@@ -46,8 +46,8 @@ export class RegisterComponent implements OnInit{
 			() => console.log("Finished Adding User")
   );
 
-    alert("Registered!");
-    this._router.navigateByUrl('/');
+    alert("Registered! Please login.");
+    window.location.href="/login";
 
   }
 }

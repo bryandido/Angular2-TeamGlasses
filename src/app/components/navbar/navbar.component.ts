@@ -21,6 +21,6 @@ export class NavbarComponent implements OnInit {
   }
   logoff(){
     window.sessionStorage.removeItem('userID');
-    location.reload();
+    window.location.href="/";
   }
 }
