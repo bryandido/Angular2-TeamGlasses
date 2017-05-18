@@ -1,13 +1,84 @@
 <div class ="container">
-
-  <div class="row col-sm-offset-2">
+  <div class="row col-sm-offset-2 col-sm-7">
     <h3>Profile</h3>
+    <div class="panel panel-info" id="viewfields">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{firstname}} {{lastname}}
+          <a (click)="edit()" ><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <table class="table table-user-information">
+            <tbody>
+              <tr>
+                <td> First name: </td>
+                <td>{{firstname}} </td>
+              </tr>
+              <tr>
+                <td> Last name: </td>
+                <td>{{lastname}} </td>
+              </tr>
+              <tr>
+                <td> Email: </td>
+                <td>{{email}}</td>
+              </tr>
+              <tr>
+                <td> Gender: </td>
+                <td>{{gender}} </td>
+              </tr>
+              <tr>
+                <td> Phone number: </td>
+                <td>{{phoneNumber}} </td>
+              </tr>
+              <tr>
+                <td> Password: </td>
+                <td>{{password}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-info" id="editfields" style="display:none">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{firstname}} {{lastname}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <table class="table table-user-information">
+            <tbody>
+              <tr>
+                <td> First name: </td>
+                <td><input type="text" [(ngModel)]="firstname"></td>
+              </tr>
+              <tr>
+                <td> Last name: </td>
+                <td><input type="text" [(ngModel)]="lastname"></td>
+              </tr>
+              <tr>
+                <td> Email: </td>
+                <td><input type="text" [(ngModel)]="email"></td>
+              </tr>
+              <tr>
+                <td> Gender: </td>
+                <td><input type="text" [(ngModel)]="gender"></td>
+              </tr>
+              <tr>
+                <td> Phone number: </td>
+                <td><input type="text" [(ngModel)]="phoneNumber"></td>
+              </tr>
+              <tr>
+                <td> Password: </td>
+                <td><input type="text" [(ngModel)]="password"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pull-right">
+          <button type="button" class="btn btn-success" (click)="update(firstname, lastname, email, gender, phoneNumber, password)">Update</button>
+          <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="body_wrapper">
-    <p>First Name: {{firstname}}</p>
-    <p>Last Name: {{lastname}}</p>
-    <p>Email: {{email}}</p>
-  </div>
-
 </div>
