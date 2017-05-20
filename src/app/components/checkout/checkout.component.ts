@@ -60,15 +60,19 @@ constructor(private router:Router, private _transactionService:TransactionServic
     this.transaction.shipping_country=this.country;
 
     this._transactionService.postTransaction(this.transaction).subscribe(
-      data => this.data = JSON.stringify(data),
+      data => {
+      this.data = JSON.stringify(data);
+      this._transactionService.getByUserId(parseInt(window.sessionStorage.getItem('userID'))).subscribe(transaction =>{
+        this.posts = transaction.transaction;
+        window.sessionStorage.setItem('latestTransaction',this.posts[this.posts.length - 1].id); //This code is correct.
+      });}
+      ,
       error => alert(error),
       () => console.log("Finished")
     );
 
-    this._transactionService.getByUserId(parseInt(window.sessionStorage.getItem('userID'))).subscribe(transaction =>{
-      this.posts = transaction.transaction;
-      window.sessionStorage.setItem('latestTransaction',this.posts[this.posts.length - 1].id); //This code is correct.
-    });
+
+    console.log("" + window.sessionStorage.getItem('latestTransaction'));
     window.location.href='/confirmation';
 }
 }

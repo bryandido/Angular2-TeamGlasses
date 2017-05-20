@@ -40,7 +40,7 @@ export class ConfirmationComponent {
   total:number=0;
   constructor(private _mapService: GooglemapService, private _customerService: CustomerService, private _productService: ProductService, public sanitizer: DomSanitizer, private _transactionService: TransactionService) {
     console.log(this.addressline1, this.city, this.state);
-    console.log(parseInt(window.sessionStorage.getItem('latestTransaction')));
+    console.log(window.sessionStorage.getItem('latestTransaction'));
     this._transactionService.getById(this.latestTransaction).subscribe(transaction => {
 
       this.fullname = transaction.transaction[0].shipping_name;
